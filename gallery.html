@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccff; /* Light pink background */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Allow vertical scrolling */
+        }
+
+        /* Background Effect */
+        .polka-dots {
+            position: fixed; /* Fixed so that it doesn't move when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, white 15%, transparent 15%),
+                              radial-gradient(circle, white 15%, transparent 15%);
+            background-size: 40px 40px; /* Size of the polka dots */
+            opacity: 0.7; /* Polka dots opacity */
+            animation: moveDots 5s infinite linear; /* Animation for background effect */
+            z-index: -1; /* Behind the content */
+        }
+
+        @keyframes moveDots {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; } /* Animation movement */
+        }
+
+        /* Top Navigation Bar Styles */
+        .top-nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .top-nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-size: 1.5em; /* Icon size */
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover {
+            color: #ffccff; /* Light pink on hover */
+        }
+
+        /* Main Navigation Bar Styles */
+        nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 60px; /* Adjust to place below top nav */
+            width: 100%;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white; /* White background on hover */
+            color: #d81b60; /* Deep pink text on hover */
+            border-radius: 5px;
+        }
+
+        /* Heading Styles */
+        h1 {
+            text-align: center;
+            margin: 120px 0 20px 0; /* Adjusted margin to account for fixed header */
+            color: #d81b60; /* Deep pink */
+            font-size: 4em; /* Large font size */
+            background: linear-gradient(135deg, #d81b60, #ffccff); /* Gradient background */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Text fill transparent */
+            position: relative; /* Positioning for decorative elements */
+            overflow: hidden; /* To hide overflow */
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%; /* Full width */
+            height: 100%;
+            background-color: white; /* White background */
+            opacity: 0.4; /* Subtle effect */
+            transform: translateX(-50%) rotate(3deg); /* Rotate for an artistic effect */
+            z-index: -1; /* Send it behind the text */
+        }
+
+        /* Gallery Section Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+            margin-bottom: 50px; /* Space for footer */
+        }
+
+        .gallery img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            max-width: 250px; /* Limit the image size */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Zoom-in effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #d81b60; /* Deep pink */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            h1 {
+                font-size: 2.5em; /* Adjust font size for smaller screens */
+            }
+
+            .top-nav {
+                flex-direction: column; /* Stack icons on smaller screens */
+                align-items: center;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller images in smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="polka-dots"></div> <!-- Polka dots background -->
+
+    <div class="top-nav">
+        <a href="index.html">&#x25B6; </a> <!-- Right arrow icon -->
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">My Gallery</a></li>
+        </ul>
+    </nav>
+
+    <h1>My Gallery</h1>
+
+    <div class="gallery">
+        <img src="image 2/g1.jpg" alt="Gallery Image 1">
+        <img src="image 2/g2.jpg" alt="Gallery Image 2">
+        <img src="image 2/g3.jpg" alt="Gallery Image 3">
+        <img src="image 2/g4.jpg" alt="Gallery Image 4">
+        <img src="image 2/g5.jpg" alt="Gallery Image 5">
+        <img src="image 2/g6.jpg" alt="Gallery Image 6">
+        <img src="image 2/g7.jpg" alt="Gallery Image 7">
+        <img src="image 2/g8.jpg" alt="Gallery Image 8">
+        <img src="image 2/g9.jpg" alt="Gallery Image 9">
+        <img src="image 2/g10.jpg" alt="Gallery Image 10">
+        <img src="image 2/g11.jpg" alt="Gallery Image 11">
+        <img src="image 2/g12.jpg" alt="Gallery Image 12">
+        <img src="image 2/g13.jpg" alt="Gallery Image 13">
+        <img src="image 2/g14.jpg" alt="Gallery Image 14">
+        <img src="image 2/g15.jpg" alt="Gallery Image 15">
+        <img src="image 2/g16.jpg" alt="Gallery Image 16">
+        <img src="image 2/g17.jpg" alt="Gallery Image 17">
+        <img src="image 2/g18.jpg" alt="Gallery Image 18">
+        <img src="image 2/g19.jpg" alt="Gallery Image 19">
+        <img src="image 2/g20.jpg" alt="Gallery Image 20">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fathen Nur Aribah. All rights reserved.</p>
+    </footer>
+</body>
+</html>

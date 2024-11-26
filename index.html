@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccff; /* Light pink background */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Only hide horizontal overflow to allow vertical scrolling */
+        }
+
+        /* Background Effect */
+        .polka-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, white 15%, transparent 15%),
+                              radial-gradient(circle, white 15%, transparent 15%);
+            background-size: 40px 40px; /* Size of the polka dots */
+            opacity: 0.7; /* Polka dots opacity */
+            animation: moveDots 5s infinite linear; /* Animation for background effect */
+            z-index: -1; /* Behind the content */
+        }
+
+        @keyframes moveDots {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; } /* Animation movement */
+        }
+
+        /* Top Navigation Bar Styles */
+        .top-nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .top-nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-size: 1.5em; /* Icon size */
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover {
+            color: #ffccff; /* Light pink on hover */
+        }
+
+        /* Main Navigation Bar Styles */
+        nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 60px; /* Adjust to place below top nav */
+            width: 100%;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white; /* White background on hover */
+            color: #d81b60; /* Deep pink text on hover */
+            border-radius: 5px;
+        }
+
+        /* Heading Styles */
+        h1 {
+            text-align: center;
+            margin: 100px 0 10px 0; /* Adjusted margin to reduce space below the heading */
+            color: #d81b60; /* Deep pink */
+            font-size: 4em; /* Large font size */
+            background: linear-gradient(135deg, #d81b60, #ffccff); /* Gradient background */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Text fill transparent */
+            position: relative; /* Positioning for decorative elements */
+            overflow: hidden; /* To hide overflow */
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%; /* Full width */
+            height: 100%;
+            background-color: white; /* White background */
+            opacity: 0.4; /* Subtle effect */
+            transform: translateX(-50%) rotate(3deg); /* Rotate for an artistic effect */
+            z-index: -1; /* Send it behind the text */
+        }
+
+        /* Content Styles */
+        .content {
+            text-align: center;
+            margin: 10px auto; /* Reduced margin to bring content closer to heading */
+            max-width: 100%;
+            padding-top: 0; /* Removed extra top padding */
+            display: flex;
+            overflow: hidden; /* Hide anything outside the container */
+        }
+
+        /* Container for Images */
+        .image-container {
+            display: flex;
+            gap: 50px; /* Space between images */
+            animation: moveImages 30s linear infinite; /* Move images animation */
+        }
+
+        /* Image Styles */
+        img {
+            border: 3px solid #d81b60; /* Deep pink border */
+            border-radius: 10px;
+            height: auto;
+            max-width: 600px; /* Max width for each image */
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Animation to Move Images from Right to Left */
+        @keyframes moveImages {
+            0% { transform: translateX(100%); } /* Start from the right */
+            50% { transform: translateX(-100%); } /* Move to the left */
+            100% { transform: translateX(100%); } /* Loop back to the right */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #d81b60; /* Deep pink */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            h1 {
+                font-size: 2.5em; /* Adjust font size for smaller screens */
+            }
+
+            .top-nav {
+                flex-direction: column; /* Stack icons on smaller screens */
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="polka-dots"></div> <!-- Polka dots background -->
+
+    <div class="top-nav">
+        <a href="biodata.html">&#x25B6; </a> <!-- Right arrow icon -->
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">My Gallery</a></li>
+        </ul>
+    </nav>
+
+    <h1>WELCOME TO MY PERSONAL WEBSITE</h1>
+    
+    <div class="content">
+        <!-- Image container to hold all images in a row -->
+        <div class="image-container">
+            <img src="image 2/baby.jpg" alt="My Picture" width="300" height="auto">
+            <img src="image 2/24.jpg" alt="My Picture" width="300" height="auto">
+            <img src="image 2/22.jpg" alt="My Picture" width="300" height="auto">
+            <img src="image 2/23.jpg" alt="My Picture" width="300" height="auto">
+            <img src="image 2/25.jpg" alt="My Picture" width="300" height="auto">
+            <img src="image 2/26.jpg" alt="My Picture" width="300" height="auto">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fathen Nur Aribah. All rights reserved.</p>
+    </footer>
+</body>
+</html>

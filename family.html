@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Keyframes for background movement */
+        @keyframes movePolkaDots {
+            from {
+                background-position: 0 0, 20px 20px;
+            }
+            to {
+                background-position: 40px 40px, 0 0;
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccff; /* Light pink background */
+            color: #333;
+            line-height: 1.6;
+            background-image: radial-gradient(circle, white 10%, transparent 10%), 
+                              radial-gradient(circle, white 10%, transparent 10%);
+            background-size: 40px 40px;
+            animation: movePolkaDots 10s linear infinite; /* Animation for moving dots */
+        }
+
+        /* Top Navigation Bar Styles */
+        .top-nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-size: 1.5em; /* Icon size */
+            transition: color 0.3s;
+            padding: 5px 10px; /* Padding for clickable area */
+        }
+
+        .top-nav a:hover {
+            color: #ffccff; /* Light pink on hover */
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #d81b60; /* Deep pink */
+            position: fixed;
+            top: 60px; /* Adjust to place below top nav */
+            width: 100%;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white; /* White background on hover */
+            color: #d81b60; /* Deep pink text on hover */
+            border-radius: 5px;
+        }
+
+        /* Container Styles */
+        .container {
+            margin: 100px auto; /* Space below the nav */
+            max-width: 800px;
+            padding: 20px;
+            background-color: white; /* White background for content */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Profile Styles */
+        .profile {
+            text-align: center;
+        }
+
+        .profile-image {
+            border-radius: 10%; /* Circular image */
+            width: 170px; /* Image size */
+            height: 200px; /* Image size */
+            border: 1px solid #d81b60; /* Deep pink border */
+            margin-bottom: 20px; /* Space below the image */
+        }
+
+        h1 {
+            text-align: center;
+            color: #d81b60; /* Deep pink */
+            margin-bottom: 20px; /* Space below heading */
+        }
+
+        h2 {
+            margin-bottom: 10px; /* Space below name */
+        }
+
+        /* Section Styles */
+        .section {
+            margin-top: 30px; /* Space above sections */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .family {
+            background-color: #f1f0f0; /* light grey background for family section */
+        }
+
+        h3 {
+            color: #d81b60; /* Deep pink */
+            margin-bottom: 10px; /* Space below subheading */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+            border: 1px solid #d81b60;
+        }
+
+        th {
+            background-color: #d81b60;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8e1f4;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffe1e1;
+        }
+
+        tr:hover {
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        footer {
+            background-color: #d81b60; /* Deep pink */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="education.html" aria-label="Go to education">&#x25C0;</a> <!-- Left arrow icon -->
+        <a href="gallery.html" aria-label="Go to gallery">&#x25B6;</a> <!-- Right arrow icon -->
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">My Biodata</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="gallery.html">My gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>My Family</h1>
+        <div class="profile">
+            <img src="image 2/bubu.jpg" alt="Profile picture of Fathen Nur Aribah" class="profile-image">
+            <h2>Fathen Nur Aribah binti Zulkefli</h2>
+        </div>
+
+        <!-- Family Table Section -->
+        <div class="section family">
+            <h3>Family</h3>
+            <table>
+                <thead>
+                    <tr>
+			<center><th>image</th>
+                        <center><th>Family Members</th>
+                        <center><th>Age</th>
+                        <center><th>Description</th>
+                        
+			
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+			<center>
+			<td><img src="image 2/ayah.jpg" alt="Father's photo" style="width: 150px; border-radius: 50%;"></td>
+			<center><td>Father</td>
+                        <center><td>54</td>
+                        <center><td>Zulkefli bin Noordin is a hardworking individual involved in planting durian trees. He enjoys spending time with his grandchildren.</td>
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/mak.jpg" alt="Mother's photo" style="width: 150px; border-radius: 50%;"></td>
+			<td>Mother</td>
+                        <td>54</td>
+                        <td>Salawati binti Mohamed Shohor is the backbone of our family, caring for everyone. She enjoys acrylic painting and collecting stamps.</td>
+                      	
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/abang affiq.jpg" alt="Muhammad Affiq's photo" style="width: 150px; border-radius: 50%;"></td> 
+			<td>Sibling 1</td>
+                        <td>30</td>
+                        <td>Muhammad Affiq bin Zulkefli is an architect. He enjoys fishing in his leisure time and is known for his kindness.</td>
+                        
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/kakak.jpg" alt="Fathen Nur Aliah's photo" style="width: 150px; border-radius: 50%;"></td>
+			<td>Sibling 2</td>
+                        <td>29</td>
+                        <td>Fathen Nur Aliah binti Zulkefli works as an accountant and enjoys collecting scarves from around the world.</td>
+                        
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/kakak auni.jpg" alt="Fathen Nur Auni's photo" style="width: 150px; border-radius: 50%;"></td>
+			<td>Sibling 3</td>
+                        <td>26</td>
+                        <td>Fathen Nur Auni binti Zulkefli is a quantity surveyor and a soft-spoken person.</td>
+                        
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/abang ariff.jpg" alt="Muhammad Ariff's photo" style="width: 150px; border-radius: 50%;"></td>
+			 <td>Sibling 4</td>
+                        <td>23</td>
+                        <td>Muhammad Ariff bin Zulkefli works as a footballer and loves animals.</td>
+                        
+			</center>
+                    </tr>
+                    <tr>
+			<center>
+			<td><img src="image 2/aribah.jpg" alt="Fathen Nur Aribah's photo" style="width: 150px; border-radius: 50%;"></td>
+			 <td>Sibling 5</td>
+                        <td>20</td>
+                        <td>Fathen Nur Aribah binti Zulkefli is a cheerful girl who loves to explore new things.</td>
+                       
+			</center>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fathen Nur Aribah. All rights reserved.</p>
+    </footer>
+</body>
+</html>
